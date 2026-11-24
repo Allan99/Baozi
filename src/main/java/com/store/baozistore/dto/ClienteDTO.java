@@ -1,13 +1,12 @@
 package com.store.baozistore.dto;
 
-import com.store.baozistore.entities.Pedido;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
+import com.store.baozistore.entities.Cliente;
 import lombok.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @NoArgsConstructor
 @Getter
@@ -19,6 +18,10 @@ public class ClienteDTO {
     private String nome;
     private LocalDate clienteDesde;
 
-    @Setter(AccessLevel.NONE)
-    private Set<PedidoDTO> pedidos = new HashSet<>();
+    public ClienteDTO(Cliente entidade){
+        id = entidade.getId();
+        nome = entidade.getNome();
+        clienteDesde = entidade.getClienteDesde();
+    }
+
 }

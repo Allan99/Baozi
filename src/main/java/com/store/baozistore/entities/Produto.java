@@ -1,7 +1,10 @@
 package com.store.baozistore.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -18,6 +21,6 @@ public class Produto {
     private Long id;
     private String nome;
     private BigDecimal preco;
-    @Column(name = "em_estoque")
     private boolean emEstoque;
+
 }

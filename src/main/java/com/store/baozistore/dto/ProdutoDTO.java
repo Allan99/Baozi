@@ -1,6 +1,6 @@
 package com.store.baozistore.dto;
 
-import jakarta.persistence.Column;
+import com.store.baozistore.entities.Produto;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,4 +21,11 @@ public class ProdutoDTO {
     private String nome;
     private BigDecimal preco;
     private boolean emEstoque;
+
+    public ProdutoDTO(Produto entidade){
+        id = entidade.getId();
+        nome = entidade.getNome();
+        preco = entidade.getPreco();
+        emEstoque = entidade.isEmEstoque();
+    }
 }

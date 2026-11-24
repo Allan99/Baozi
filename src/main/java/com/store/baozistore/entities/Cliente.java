@@ -18,11 +18,8 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
-    @Column(name = "cliente_desde")
     private LocalDate clienteDesde;
 
-    @OneToMany(mappedBy = "cliente")
-    @Setter(AccessLevel.NONE)
-    private Set<Pedido> pedidos = new HashSet<>();
 }
