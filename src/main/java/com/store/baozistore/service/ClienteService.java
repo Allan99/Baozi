@@ -1,8 +1,12 @@
 package com.store.baozistore.service;
 
 import com.store.baozistore.dto.ClienteDTO;
+import com.store.baozistore.dto.PedidoDTO;
 import com.store.baozistore.entities.Cliente;
+import com.store.baozistore.entities.Pedido;
+import com.store.baozistore.entities.Produto;
 import com.store.baozistore.repositories.ClienteRepository;
+import com.store.baozistore.repositories.PedidoRepository;
 import com.store.baozistore.service.exceptions.DatabaseException;
 import com.store.baozistore.service.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
@@ -18,6 +22,9 @@ public class ClienteService {
 
     @Autowired
     private ClienteRepository repository;
+
+    @Autowired
+    private PedidoRepository pedidoRepository;
 
     @Transactional(readOnly = true)
     public Page<ClienteDTO> findAll(Pageable pageable){

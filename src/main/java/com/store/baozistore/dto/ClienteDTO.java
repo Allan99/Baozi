@@ -1,6 +1,7 @@
 package com.store.baozistore.dto;
 
 import com.store.baozistore.entities.Cliente;
+import com.store.baozistore.entities.Pedido;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -23,5 +24,4 @@ public class ClienteDTO {
         nome = entidade.getNome();
         clienteDesde = entidade.getClienteDesde();
     }
-
 }

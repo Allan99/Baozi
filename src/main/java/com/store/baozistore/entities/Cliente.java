@@ -22,4 +22,9 @@ public class Cliente {
     private String nome;
     private LocalDate clienteDesde;
 
+    public Cliente(Long id, String nome, LocalDate clienteDesde) {
+        this.id = id;
+        this.nome = nome;
+        this.clienteDesde = clienteDesde;
+    }
 }
